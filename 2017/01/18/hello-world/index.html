@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>深入理解javascript | Hexo</title>
+  <title>深入理解javascript1~6 | Hexo</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -25,7 +25,7 @@
 所有jquery对象以$符号开头
 J-开头的命名用于js中业务逻辑编写">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解javascript">
+<meta property="og:title" content="深入理解javascript1~6">
 <meta property="og:url" content="http://www.dhxhq.site/2017/01/18/hello-world/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="编写高质量JavaScript代码的基本要点
@@ -37,9 +37,9 @@ J-开头的命名用于js中业务逻辑编写">
 变量和方法命名——方法下划线开始进行命名，驼峰命名，名称不要太长，尽量能够表达清楚命名方法或者参数的实际意义。
 所有jquery对象以$符号开头
 J-开头的命名用于js中业务逻辑编写">
-<meta property="og:updated_time" content="2017-01-18T08:06:07.328Z">
+<meta property="og:updated_time" content="2017-01-18T08:26:30.670Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解javascript">
+<meta name="twitter:title" content="深入理解javascript1~6">
 <meta name="twitter:description" content="编写高质量JavaScript代码的基本要点
 编码规范
 缩进 —— tab制表符进行缩进
@@ -198,7 +198,7 @@ J-开头的命名用于js中业务逻辑编写">
 <div class="content content-post CENTER">
    <article id="post-hello-world" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">深入理解javascript</h1>
+    <h1 class="post-title">深入理解javascript1~6</h1>
 
     <div class="article-meta">
       <span>
@@ -250,6 +250,14 @@ J-开头的命名用于js中业务逻辑编写">
 </li>
 <li><p><strong>变量与变量作用域</strong></p>
 </li>
+</ol>
+<p>​       <strong>*全局变量</strong>:</p>
+<p>​       window：每个JavaScript环境有一个全局对象，当你在任意的函数外面使用this的时候也可以访问到。</p>
+<p>​       <img src="" alt=""></p>
+<p>​      当声明一个全局变量时，在全局作用于下可以通过window进行访问，同时也可以通过this访问，并且在全局作   用域下this与window不管是值还是类型都是全等的。</p>
+<p>​     尽可能少的使用全局变量，因为可能出现命名冲突导致后面的变量覆盖前面的变量。</p>
+<ol>
+<li>​</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
