@@ -66,7 +66,7 @@ J-开头的命名用于js中业务逻辑编写
 <meta property="og:image" content="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvv1ckggzj206404d3ye.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvv1cvdkfj2063085mx5.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvv1dcfbuj205z01eglf.jpg">
-<meta property="og:updated_time" content="2017-01-19T05:38:42.232Z">
+<meta property="og:updated_time" content="2017-01-19T05:41:14.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解javascript1-6">
 <meta name="twitter:description" content="编写高质量javascript 缩进 —— tab制表符进行缩进
@@ -220,7 +220,7 @@ J-开头的命名用于js中业务逻辑编写
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#编写高质量javascript"><span class="toc-text">编写高质量javascript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#揭秘命名函数表达式"><span class="toc-text">揭秘命名函数表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全面解析Modul模式"><span class="toc-text">全面解析Modul模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#立即调用函数表达式"><span class="toc-text">立即调用函数表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#编写高质量javascript"><span class="toc-text">编写高质量javascript</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#揭秘命名函数表达式"><span class="toc-text">揭秘命名函数表达式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#全面解析Modul模式"><span class="toc-text">全面解析Modul模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#立即调用函数表达式"><span class="toc-text">立即调用函数表达式</span></a></li></ol>
   </div>
 
 
@@ -268,7 +268,7 @@ J-开头的命名用于js中业务逻辑编写
 
   <div class="article-content">
     
-      <h3 id="编写高质量javascript"><a href="#编写高质量javascript" class="headerlink" title="编写高质量javascript"></a>编写高质量javascript</h3><p> 缩进 —— tab制表符进行缩进</p>
+      <h1 id="编写高质量javascript"><a href="#编写高质量javascript" class="headerlink" title="编写高质量javascript"></a>编写高质量javascript</h1><p> 缩进 —— tab制表符进行缩进</p>
 <p>花括号 —— 左花括号尽量放在上一行</p>
 <p> ‘ ‘ —— 单双引号尽量不混用，js中尽量使用单引号</p>
 <p>== —— 等号左右空格一个</p>
@@ -337,7 +337,7 @@ J-开头的命名用于js中业务逻辑编写
 </ul>
 <p>​     字符串转换为数字的方式：</p>
 <p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvu0d70tjj205j01yt8k.jpg" alt=""></p>
-<h3 id="揭秘命名函数表达式"><a href="#揭秘命名函数表达式" class="headerlink" title="揭秘命名函数表达式"></a>揭秘命名函数表达式</h3><p>1．<strong>函数表达式和函数声明区别</strong></p>
+<h1 id="揭秘命名函数表达式"><a href="#揭秘命名函数表达式" class="headerlink" title="揭秘命名函数表达式"></a>揭秘命名函数表达式</h1><p>1．<strong>函数表达式和函数声明区别</strong></p>
 <p>函数声明必须带有标示符（Identifier）（就是大家常说的函数名称），而函数表达式则可以省略这个标示符。</p>
 <p> 函数声明:</p>
 <p> function 函数名称 (参数：可选){ 函数体 }</p>
@@ -356,7 +356,7 @@ J-开头的命名用于js中业务逻辑编写
 <p>只有函数声明采用提升到最上下文最前面，采用下面这种方式就能找到函数g（）。</p>
 <p><img src="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvv16thumj205x022jr8.jpg" alt=""></p>
 <p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvv17f1mgj20eq031gll.jpg" alt=""></p>
-<h3 id="全面解析Modul模式"><a href="#全面解析Modul模式" class="headerlink" title="全面解析Modul模式"></a>全面解析Modul模式</h3><p>Module模式的基本特征：</p>
+<h1 id="全面解析Modul模式"><a href="#全面解析Modul模式" class="headerlink" title="全面解析Modul模式"></a>全面解析Modul模式</h1><p>Module模式的基本特征：</p>
 <p>​           模块化，可重用</p>
 <p>​            封装了变量和function，和全局的namaspace不接触，松耦合</p>
 <p>​            只暴露可用public的方法，其它私有方法全部隐藏</p>
@@ -376,7 +376,7 @@ J-开头的命名用于js中业务逻辑编写
 <p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvv19q57ij20620160si.jpg" alt=""></p>
 <p>每个单独分离的文件都保证以下这个结构，就可以实现任意顺序的加载，所以，这个时候的var就是必须要声明的，因为不声明，其它文件读取不到。</p>
 <p><img src="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvv1atlw2j207l02n3ye.jpg" alt=""></p>
-<h3 id="立即调用函数表达式"><a href="#立即调用函数表达式" class="headerlink" title="立即调用函数表达式"></a>立即调用函数表达式</h3><p>1．<strong>访问私有变量</strong></p>
+<h1 id="立即调用函数表达式"><a href="#立即调用函数表达式" class="headerlink" title="立即调用函数表达式"></a>立即调用函数表达式</h1><p>1．<strong>访问私有变量</strong></p>
 <p>任何function在执行的时候都会创建一个执行上下文，因为function声明的变量和function有可能只在该function内部，这个上下文，在调用function的时候，提供了一种简单的方式来创建自由变量或私有子function。</p>
 <p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvv1c2043j20br08zaab.jpg" alt=""></p>
 <p>其中Add()函数中创建了局部变量（私有变量）i，在函数外面i是不能访问的。然而，可以通过匿名函数的方式将i做加法然后作为add（）函数的返回值进行访问局部变量i，在这里涉及到作用域链问题，也就是上面所说的执行上下文。</p>
@@ -389,10 +389,6 @@ J-开头的命名用于js中业务逻辑编写
 <p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvv1cvdkfj2063085mx5.jpg" alt=""></p>
 <p>很多文章上面说下面这种立即执行函数效率最高，具体原因我还没有理解明白：</p>
 <p><img src="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvv1dcfbuj205z01eglf.jpg" alt=""></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
     
   </div>
