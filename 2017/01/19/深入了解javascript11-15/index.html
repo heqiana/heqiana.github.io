@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>深入理解javascript6-10 | 博客</title>
+  <title>深入理解javascript11-15 | 博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,18 +15,22 @@
     <meta name="keywords" content="前端,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
   
 
-  <meta name="description" content="根本没有“JSON对象”这回事1.JSON字符串和对象字面量{ “prop”: “val” } 这样的声明有可能是JavaScript对象字面量也有可能是JSON字符串，取决于什么上下文使用它，如果是用在string上下文（用单引号或双引号引住，或者从text文件读取）的话，那它就是JSON字符串，如果是用在对象字面量上下文中，那它就是对象字面量。
-
-JSON.parse用来将JSON字符串反序列">
+  <meta name="description" content="变量对象1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
+变量对象是一个与执行上下文相关的特殊对象，它存储着在上下文中声明的以下内容：
+变量 (var, 变量声明);
+函数声明 (FunctionDeclaration, 缩写为FD);
+函数的形参
+javascript核心（晋级高手必读篇）1.对象Object Object是一个">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解javascript6-10">
-<meta property="og:url" content="http://www.dhxhq.site/2017/01/19/深入了解javascript6-10/index.html">
+<meta property="og:title" content="深入理解javascript11-15">
+<meta property="og:url" content="http://www.dhxhq.site/2017/01/19/深入了解javascript11-15/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="根本没有“JSON对象”这回事1.JSON字符串和对象字面量{ “prop”: “val” } 这样的声明有可能是JavaScript对象字面量也有可能是JSON字符串，取决于什么上下文使用它，如果是用在string上下文（用单引号或双引号引住，或者从text文件读取）的话，那它就是JSON字符串，如果是用在对象字面量上下文中，那它就是对象字面量。
-
-JSON.parse用来将JSON字符串反序列">
-<meta property="og:image" content="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvz00hylyj20d20403yk.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz01do1gj20a604gmx9.jpg">
+<meta property="og:description" content="变量对象1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
+变量对象是一个与执行上下文相关的特殊对象，它存储着在上下文中声明的以下内容：
+变量 (var, 变量声明);
+函数声明 (FunctionDeclaration, 缩写为FD);
+函数的形参
+javascript核心（晋级高手必读篇）1.对象Object Object是一个">
 <meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz023g4qj20f206l0sn.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/small/cc58c06cgy1fbvz02utrsj208409a74e.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz03vpfxj20av08laab.jpg">
@@ -39,13 +43,16 @@ JSON.parse用来将JSON字符串反序列">
 <meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz09es7qj206904pwef.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz0a1uyaj207403kjra.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz0an3btj20bl07jq31.jpg">
-<meta property="og:updated_time" content="2017-01-19T07:48:09.951Z">
+<meta property="og:updated_time" content="2017-01-19T07:58:48.279Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解javascript6-10">
-<meta name="twitter:description" content="根本没有“JSON对象”这回事1.JSON字符串和对象字面量{ “prop”: “val” } 这样的声明有可能是JavaScript对象字面量也有可能是JSON字符串，取决于什么上下文使用它，如果是用在string上下文（用单引号或双引号引住，或者从text文件读取）的话，那它就是JSON字符串，如果是用在对象字面量上下文中，那它就是对象字面量。
-
-JSON.parse用来将JSON字符串反序列">
-<meta name="twitter:image" content="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvz00hylyj20d20403yk.jpg">
+<meta name="twitter:title" content="深入理解javascript11-15">
+<meta name="twitter:description" content="变量对象1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
+变量对象是一个与执行上下文相关的特殊对象，它存储着在上下文中声明的以下内容：
+变量 (var, 变量声明);
+函数声明 (FunctionDeclaration, 缩写为FD);
+函数的形参
+javascript核心（晋级高手必读篇）1.对象Object Object是一个">
+<meta name="twitter:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz023g4qj20f206l0sn.jpg">
 
   
 
@@ -187,15 +194,15 @@ JSON.parse用来将JSON字符串反序列">
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#根本没有“JSON对象”这回事"><span class="toc-text">根本没有“JSON对象”这回事</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-JSON字符串和对象字面量"><span class="toc-text">1.JSON字符串和对象字面量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript核心（晋级高手必读篇）"><span class="toc-text">javascript核心（晋级高手必读篇）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-对象Object"><span class="toc-text">1.对象Object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-原型链"><span class="toc-text">2.原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-构造函数"><span class="toc-text">3.构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-执行上下文栈（讲的好模糊，没明白）"><span class="toc-text">4.执行上下文栈（讲的好模糊，没明白）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-作用域链"><span class="toc-text">5.作用域链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-闭包"><span class="toc-text">6.闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-This指针"><span class="toc-text">7.This指针</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#执行上下文（Execution-contexts）"><span class="toc-text">执行上下文（Execution contexts）</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量对象"><span class="toc-text">变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-数据声明"><span class="toc-text">1.数据声明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript核心（晋级高手必读篇）"><span class="toc-text">javascript核心（晋级高手必读篇）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-对象Object"><span class="toc-text">1.对象Object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-原型链"><span class="toc-text">2.原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-构造函数"><span class="toc-text">3.构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-执行上下文栈（讲的好模糊，没明白）"><span class="toc-text">4.执行上下文栈（讲的好模糊，没明白）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-作用域链"><span class="toc-text">5.作用域链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-闭包"><span class="toc-text">6.闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-This指针"><span class="toc-text">7.This指针</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#执行上下文（Execution-contexts）"><span class="toc-text">执行上下文（Execution contexts）</span></a></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-深入了解javascript6-10" class="article article-type-post" itemprop="blogPost">
+   <article id="post-深入了解javascript11-15" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">深入理解javascript6-10</h1>
+    <h1 class="post-title">深入理解javascript11-15</h1>
 
     <div class="article-meta">
       <span>
@@ -216,7 +223,7 @@ JSON.parse用来将JSON字符串反序列">
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://www.forsigner.com/2017/01/19/深入了解javascript6-10/#disqus_thread"></a>
+          <a href="http://www.forsigner.com/2017/01/19/深入了解javascript11-15/#disqus_thread"></a>
         </span>
       
 
@@ -235,11 +242,12 @@ JSON.parse用来将JSON字符串反序列">
 
   <div class="article-content">
     
-      <h1 id="根本没有“JSON对象”这回事"><a href="#根本没有“JSON对象”这回事" class="headerlink" title="根本没有“JSON对象”这回事"></a>根本没有“JSON对象”这回事</h1><h3 id="1-JSON字符串和对象字面量"><a href="#1-JSON字符串和对象字面量" class="headerlink" title="1.JSON字符串和对象字面量"></a>1.JSON字符串和对象字面量</h3><p>{ “prop”: “val” } 这样的声明有可能是JavaScript对象字面量也有可能是JSON字符串，取决于什么上下文使用它，如果是用在string上下文（用单引号或双引号引住，或者从text文件读取）的话，那它就是JSON字符串，如果是用在对象字面量上下文中，那它就是对象字面量。</p>
-<p><img src="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvz00hylyj20d20403yk.jpg" alt=""></p>
-<p>JSON.parse用来将JSON字符串反序列化成对象，JSON.stringify用来将对象序列化成JSON字符串。</p>
-<p><img src="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz01do1gj20a604gmx9.jpg" alt=""></p>
-<h1 id="javascript核心（晋级高手必读篇）"><a href="#javascript核心（晋级高手必读篇）" class="headerlink" title="javascript核心（晋级高手必读篇）"></a>javascript核心（晋级高手必读篇）</h1><h3 id="1-对象Object"><a href="#1-对象Object" class="headerlink" title="1.对象Object"></a>1.<strong>对象Object</strong></h3><p> Object是一个属性的集合，并且都拥有一个单独的原型对象[prototype object]. 这个原型对象[prototype object]可以是一个object或者null值。</p>
+      <h1 id="变量对象"><a href="#变量对象" class="headerlink" title="变量对象"></a><strong>变量对象</strong></h1><h3 id="1-数据声明"><a href="#1-数据声明" class="headerlink" title="1.数据声明"></a>1.数据声明</h3><p>如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。</p>
+<p>变量对象是一个与执行上下文相关的特殊对象，它存储着在上下文中声明的以下内容：</p>
+<pre><code>变量 (var, 变量声明);
+函数声明 (FunctionDeclaration, 缩写为FD);
+函数的形参
+</code></pre><h1 id="javascript核心（晋级高手必读篇）"><a href="#javascript核心（晋级高手必读篇）" class="headerlink" title="javascript核心（晋级高手必读篇）"></a>javascript核心（晋级高手必读篇）</h1><h3 id="1-对象Object"><a href="#1-对象Object" class="headerlink" title="1.对象Object"></a>1.<strong>对象Object</strong></h3><p> Object是一个属性的集合，并且都拥有一个单独的原型对象[prototype object]. 这个原型对象[prototype object]可以是一个object或者null值。</p>
 <p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz023g4qj20f206l0sn.jpg" alt=""></p>
 <p>show对象有两个显式的属性a,b和一个自带隐式的 <strong>proto</strong> 属性，<strong>proto</strong> 指向show的原型对象。</p>
 <h3 id="2-原型链"><a href="#2-原型链" class="headerlink" title="2.原型链"></a>2.原型链</h3><p>原型对象也是普通的对象，并且也有可能有自己的原型，如果一个原型对象的原型不为null的话，我们就称之为原型链。原型链是一个由对象组成的有限对象链由于实现继承和共享属性。</p>
@@ -275,10 +283,10 @@ JSON.parse用来将JSON字符串反序列">
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2017/01/18/hello-world/">
+    <a class="show pull-left" href="/2017/01/19/深入了解javascript6-10/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2017/01/19/深入了解javascript11-15/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -403,7 +411,7 @@ JSON.parse用来将JSON字符串反序列">
   <script>
     var disqus_shortname = 'forsigner';
     
-    var disqus_url = 'http://www.dhxhq.site/2017/01/19/深入了解javascript6-10/';
+    var disqus_url = 'http://www.dhxhq.site/2017/01/19/深入了解javascript11-15/';
     
     (function(){
       var dsq = document.createElement('script');
