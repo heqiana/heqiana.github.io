@@ -38,7 +38,10 @@ J-开头的命名用于js中业务逻辑编写">
 所有jquery对象以$符号开头
 J-开头的命名用于js中业务逻辑编写">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fbvpnjd12gj2071062aa5.jpg">
-<meta property="og:updated_time" content="2017-01-19T02:33:14.154Z">
+<meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvqw3pw4oj207u035wef.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/small/cc58c06cgy1fbvr9iaqddj206h045a9z.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvrk8rljtj205601dmwy.jpg">
+<meta property="og:updated_time" content="2017-01-19T03:11:31.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解javascript1-6">
 <meta name="twitter:description" content="编写高质量JavaScript代码的基本要点
@@ -191,7 +194,7 @@ J-开头的命名用于js中业务逻辑编写">
 
 
   <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
+    <strong class="toc-title">Posts List</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#编写高质量JavaScript代码的基本要点"><span class="toc-text">编写高质量JavaScript代码的基本要点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
   </div>
 
@@ -253,14 +256,22 @@ J-开头的命名用于js中业务逻辑编写">
 <li><p><strong>变量与变量作用域</strong></p>
 </li>
 </ol>
-<p>​       <strong>*全局变量</strong>:</p>
+<ul>
+<li><strong>全局变量</strong></li>
+</ul>
 <p>​       window：每个JavaScript环境有一个全局对象，当你在任意的函数外面使用this的时候也可以访问到。</p>
-<p>​       <img src="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fbvpnjd12gj2071062aa5.jpg" alt=""></p>
-<p>​      当声明一个全局变量时，在全局作用于下可以通过window进行访问，同时也可以通过this访问，并且在全局作   用域下this与window不管是值还是类型都是全等的。</p>
+<p>​       <img src="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fbvpnjd12gj2071062aa5.jpg" alt="">    <img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvqw3pw4oj207u035wef.jpg" alt=""></p>
+<p>当声明一个全局变量时，在全局作用于下可以通过window进行访问，同时也可以通过this访问，并且在全局作   用域下this与window不管是值还是类型都是全等的。</p>
 <p>​     尽可能少的使用全局变量，因为可能出现命名冲突导致后面的变量覆盖前面的变量。</p>
-<ol>
-<li>​</li>
-</ol>
+<ul>
+<li><p><strong>隐式全局变量</strong></p>
+<p>其中sum为隐式全局变量，在函数中最好将sum采用var sum=a+b或者let sum=a+b（这里let用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效）将其声明为局部变量，否则可能会造成不必要的麻烦。</p>
+<p><img src="http://wx1.sinaimg.cn/small/cc58c06cgy1fbvr9iaqddj206h045a9z.jpg" alt=""></p>
+</li>
+</ul>
+<p>补充（let）：ES6中新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p>
+<p>第二种隐式全局变量通常采用链式声明变量的情况下，其中b为全局，原因是变量赋值是从右向左，因此首先是给变量b赋值为0。</p>
+<p><img src="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvrk8rljtj205601dmwy.jpg" alt=""></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -324,7 +335,7 @@ J-开头的命名用于js中业务逻辑编写">
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">关闭</span>
+      <span id="close" class="btn-close">Close</span>
     </div>
     <hr>
     <div class="modal-body">
