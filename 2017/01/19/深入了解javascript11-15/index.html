@@ -28,19 +28,9 @@
 上面代码的对应的变量对象是：
 12345678VO(globalContext) = &amp;#123;    //全局变量对象  a: 10,  test: &amp;lt;reference to function&amp;gt;&amp;#125;;VO(test functionContext">
 <meta property="og:image" content="http://wx1.sinaimg.cn/small/cc58c06cgy1fbw1awna3nj208h05kweh.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz023g4qj20f206l0sn.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/small/cc58c06cgy1fbvz02utrsj208409a74e.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz03vpfxj20av08laab.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvz04jo0qj209t02xjr9.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz05d5btj20em05tweq.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz08rntbj20aq05caa7.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz072hdcj20d009i74o.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvz07r4a1j20d706ngls.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz08rntbj20aq05caa7.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz09es7qj206904pwef.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz0a1uyaj207403kjra.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz0an3btj20bl07jq31.jpg">
-<meta property="og:updated_time" content="2017-01-20T02:32:35.194Z">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbwvwvmjrxj20fy07xq3f.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbwx7n60hij20a909674k.jpg">
+<meta property="og:updated_time" content="2017-01-20T03:15:50.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解javascript11-15">
 <meta name="twitter:description" content="变量对象1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
@@ -189,7 +179,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量对象"><span class="toc-text">变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-数据声明"><span class="toc-text">1.数据声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-不同执行上下文中的变量对象"><span class="toc-text">2.不同执行上下文中的变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数上下文中的变量对象"><span class="toc-text">函数上下文中的变量对象</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript核心（晋级高手必读篇）"><span class="toc-text">javascript核心（晋级高手必读篇）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-对象Object"><span class="toc-text">1.对象Object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-原型链"><span class="toc-text">2.原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-构造函数"><span class="toc-text">3.构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-执行上下文栈（讲的好模糊，没明白）"><span class="toc-text">4.执行上下文栈（讲的好模糊，没明白）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-作用域链"><span class="toc-text">5.作用域链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-闭包"><span class="toc-text">6.闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-This指针"><span class="toc-text">7.This指针</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#执行上下文（Execution-contexts）"><span class="toc-text">执行上下文（Execution contexts）</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量对象"><span class="toc-text">变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-数据声明"><span class="toc-text">1.数据声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-不同执行上下文中的变量对象"><span class="toc-text">2.不同执行上下文中的变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数上下文中的变量对象"><span class="toc-text">函数上下文中的变量对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-关于变量"><span class="toc-text">3.关于变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-parent-属性"><span class="toc-text">4. _parent _属性</span></a></li></ol></li></ol></li></ol>
   </div>
 
 
@@ -252,7 +242,7 @@
 <p>​    length–真正传递的参数个数</p>
 <p>​    properties-indexes(字符串类型整数)属性的值就是函数的参数值。</p>
 <p>如下面例子所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;http://wx4.sinaimg.cn/small/cc58c06cgy1fbwvy9l4t9j20fy07xq3f.jpg&quot; width = &quot;500&quot; height = &quot;500&quot; alt=&quot;图片名称&quot; align=center /&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbwvwvmjrxj20fy07xq3f.jpg" alt=""></p>
 </li>
 <li><p><strong>处理上下文代码的2个阶段</strong></p>
 </li>
@@ -263,33 +253,12 @@
 <p>​    进入执行上下文：</p>
 <p>​    进入之前，VO包含以下属性：函数所以形参，函数声明，变量声明，如下：    </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function test(a, b) &#123;</div><div class="line">  var c = 10;</div><div class="line">  function d() &#123;&#125;</div><div class="line">  var e = function _e() &#123;&#125;;</div><div class="line">  (function x() &#123;&#125;);</div><div class="line">&#125; </div><div class="line">test(10);</div></pre></td></tr></table></figure>
-<p>​    该函数的AO </p>
-<h1 id="javascript核心（晋级高手必读篇）"><a href="#javascript核心（晋级高手必读篇）" class="headerlink" title="javascript核心（晋级高手必读篇）"></a>javascript核心（晋级高手必读篇）</h1><h3 id="1-对象Object"><a href="#1-对象Object" class="headerlink" title="1.对象Object"></a>1.<strong>对象Object</strong></h3><p> Object是一个属性的集合，并且都拥有一个单独的原型对象[prototype object]. 这个原型对象[prototype object]可以是一个object或者null值。</p>
-<p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz023g4qj20f206l0sn.jpg" alt=""></p>
-<p>show对象有两个显式的属性a,b和一个自带隐式的 <strong>proto</strong> 属性，<strong>proto</strong> 指向show的原型对象。</p>
-<h3 id="2-原型链"><a href="#2-原型链" class="headerlink" title="2.原型链"></a>2.原型链</h3><p>原型对象也是普通的对象，并且也有可能有自己的原型，如果一个原型对象的原型不为null的话，我们就称之为原型链。原型链是一个由对象组成的有限对象链由于实现继承和共享属性。</p>
-<p><img src="http://wx1.sinaimg.cn/small/cc58c06cgy1fbvz02utrsj208409a74e.jpg" alt=""></p>
-<p>原理如下:对象b如果中找不到calculate方法(也就是对象b中没有这个calculate属性), 那么就会沿着原型链开始找。如果这个calculate方法在b的prototype中没有找到，那么就会沿着原型链找到a的prototype，一直遍历完整个原型链。</p>
-<p>​    但是，一旦找到，就返回第一个找到的属性或者方法。因此，第一个找到的属性成为继承属性。如果遍历完整个原型链，仍然没有找到，那么就会返回undefined。</p>
-<h3 id="3-构造函数"><a href="#3-构造函数" class="headerlink" title="3.构造函数"></a>3.<strong>构造函数</strong></h3><p><img src="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz03vpfxj20av08laab.jpg" alt=""></p>
-<p>构造函数会自动为创建的新对象设置了原型对象(prototype object)。</p>
-<p><img src="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvz04jo0qj209t02xjr9.jpg" alt=""></p>
-<h3 id="4-执行上下文栈（讲的好模糊，没明白）"><a href="#4-执行上下文栈（讲的好模糊，没明白）" class="headerlink" title="4.执行上下文栈（讲的好模糊，没明白）"></a>4.执行上下文栈（讲的好模糊，没明白）</h3><p>ECMASscript中的代码有三种类型：global, function和eval。一个执行上下文可以激活另一个上下文，就好比一个函数调用了另一个函数(或者全局的上下文调用了一个全局函数)，然后一层一层调用下去。逻辑上来说，这种实现方式是栈，我们可以称之为上下文堆栈。</p>
-<p><img src="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz05d5btj20em05tweq.jpg" alt=""></p>
-<h3 id="5-作用域链"><a href="#5-作用域链" class="headerlink" title="5.作用域链"></a>5.<strong>作用域链</strong></h3><p>作用域链是一个对象列表，用以检索上下文代码中出现的标识符。作用域链的原理和原型链很类似，如果这个变量在自己的作用域中没有，那么它会寻找父级的，直到最顶层。</p>
-<p><img src="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz08rntbj20aq05caa7.jpg" alt=""></p>
-<p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz072hdcj20d009i74o.jpg" alt=""></p>
-<p>只要所有外部函数的变量对象都存在，那么从内部函数引用外部数据则没有特别之处——我们只要遍历作用域链表，查找所需变量。</p>
-<h3 id="6-闭包"><a href="#6-闭包" class="headerlink" title="6.闭包"></a>6.<strong>闭包</strong></h3><p><img src="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvz07r4a1j20d706ngls.jpg" alt=""></p>
-<p>这种形式的作用域称为静态作用域。上面的x变量就是在函数bar的[[Scope]]中搜寻到的。理论上来说，也会有动态作用域, 也就是上述的x被重新赋值为20，而不是10。</p>
-<p><img src="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz08rntbj20aq05caa7.jpg" alt=""></p>
-<h3 id="7-This指针"><a href="#7-This指针" class="headerlink" title="7.This指针"></a>7.<strong>This指针</strong></h3><p>在global context(全局上下文)中，this的值就是指全局这个对象，这就意味着，this值就是这个变量本身。</p>
-<p><img src="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvz09es7qj206904pwef.jpg" alt=""></p>
-<h1 id="执行上下文（Execution-contexts）"><a href="#执行上下文（Execution-contexts）" class="headerlink" title="执行上下文（Execution contexts）"></a>执行上下文（Execution contexts）</h1><p>活动的执行上下文组在逻辑上组成一个堆栈。堆栈底部永远都是全局上下文(global context)，而顶部就是当前(活动的)执行上下文。</p>
-<p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz0a1uyaj207403kjra.jpg" alt=""></p>
-<p>每次return的时候，都会退出当前执行上下文的，相应地ECStack就会弹出，栈指针会自动移动位置，这是一个典型的堆栈实现方式。一个抛出的异常如果没被截获的话也有可能从一个或多个执行上下文退出。相关代码执行完以后，ECStack只会包含全局上下文(global context)，一直到整个应用程序结束。</p>
-<p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvz0an3btj20bl07jq31.jpg" alt=""></p>
-<p>可以把调用上下文作为第二个参数传递给eval，但是这里可以看到在谷歌浏览器上并不能修改a变量的值，只有在在版本号1.7以上的SpiderMonkey(内置于Firefox,Thunderbird)的实现中。</p>
+<p>​    该函数的AO (活动对象)如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">AO(test) = &#123;</div><div class="line">  a: 10,</div><div class="line">  b: undefined,</div><div class="line">  c: undefined,</div><div class="line">  d: &lt;reference to FunctionDeclaration &quot;d&quot;&gt;</div><div class="line">  e: undefined</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="3-关于变量"><a href="#3-关于变量" class="headerlink" title="3.关于变量"></a>3.关于变量</h3><p>任何时候变量只能通过var声明，当然现在es6的let也可以进行声明变量。</p>
+<p><img src="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbwx7n60hij20a909674k.jpg" alt=""></p>
+<h3 id="4-parent-属性"><a href="#4-parent-属性" class="headerlink" title="4. _parent _属性"></a>4. <strong>_parent</strong> _属性</h3><p>函数有一个特殊的属性<em>parent</em>，通过这个属性可以直接引用全局变量对象。如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;&#125;</div><div class="line">alert(foo.__parent__); // global</div></pre></td></tr></table></figure>
 
     
   </div>
