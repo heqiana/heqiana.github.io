@@ -30,7 +30,9 @@
 <meta property="og:image" content="http://wx1.sinaimg.cn/small/cc58c06cgy1fbw1awna3nj208h05kweh.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbwvwvmjrxj20fy07xq3f.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbwx7n60hij20a909674k.jpg">
-<meta property="og:updated_time" content="2017-01-20T03:15:50.182Z">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbwxgdiszzj20e8067mxa.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbx1ll6zjtj20bh07imxb.jpg">
+<meta property="og:updated_time" content="2017-01-20T09:43:57.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解javascript11-15">
 <meta name="twitter:description" content="变量对象1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
@@ -179,7 +181,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量对象"><span class="toc-text">变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-数据声明"><span class="toc-text">1.数据声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-不同执行上下文中的变量对象"><span class="toc-text">2.不同执行上下文中的变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数上下文中的变量对象"><span class="toc-text">函数上下文中的变量对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-关于变量"><span class="toc-text">3.关于变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-parent-属性"><span class="toc-text">4. _parent _属性</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量对象"><span class="toc-text">变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-数据声明"><span class="toc-text">1.数据声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-不同执行上下文中的变量对象"><span class="toc-text">2.不同执行上下文中的变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数上下文中的变量对象"><span class="toc-text">函数上下文中的变量对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-关于变量"><span class="toc-text">3.关于变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-parent-属性"><span class="toc-text">4. _parent _属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#This-Yes-this"><span class="toc-text">This? Yes,this!</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-全局代码中的this"><span class="toc-text">1.全局代码中的this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-函数代码中的this"><span class="toc-text">2.函数代码中的this</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#作用域链"><span class="toc-text">作用域链</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-作用域特征"><span class="toc-text">1.作用域特征</span></a></li></ol></li></ol></li></ol>
   </div>
 
 
@@ -259,6 +261,18 @@
 <p><img src="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbwx7n60hij20a909674k.jpg" alt=""></p>
 <h3 id="4-parent-属性"><a href="#4-parent-属性" class="headerlink" title="4. _parent _属性"></a>4. <strong>_parent</strong> _属性</h3><p>函数有一个特殊的属性<em>parent</em>，通过这个属性可以直接引用全局变量对象。如下所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function foo() &#123;&#125;</div><div class="line">alert(foo.__parent__); // global</div></pre></td></tr></table></figure>
+<h1 id="This-Yes-this"><a href="#This-Yes-this" class="headerlink" title="This? Yes,this!"></a>This? Yes,this!</h1><h3 id="1-全局代码中的this"><a href="#1-全局代码中的this" class="headerlink" title="1.全局代码中的this"></a>1.全局代码中的this</h3><p>在全局代码中，this始终是全局对象本身。</p>
+<p><img src="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbwxgdiszzj20e8067mxa.jpg" alt=""></p>
+<h3 id="2-函数代码中的this"><a href="#2-函数代码中的this" class="headerlink" title="2.函数代码中的this"></a>2.函数代码中的this</h3><p>函数中的this是进入上下文时确定，在一个函数代码中，这个值在每一次完全不同。并且在代码运行时的this值是不变的。</p>
+<p><img src="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbx1ll6zjtj20bh07imxb.jpg" alt=""></p>
+<p>影响this的因素：</p>
+<p>​    1.this取决于调用函数的方式</p>
+<p>​    2.如果当前函数为全局函数，则当前this指向全局。如果是以字面量形式定义的对象里面的函数，那么函数中的this则为当前对象。</p>
+<h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><h3 id="1-作用域特征"><a href="#1-作用域特征" class="headerlink" title="1.作用域特征"></a>1.作用域特征</h3><ul>
+<li><p>闭包</p>
+<p>​</p>
+</li>
+</ul>
 
     
   </div>

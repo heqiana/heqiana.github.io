@@ -66,11 +66,11 @@ J-开头的命名用于js中业务逻辑编写
 <meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvv1dcfbuj205z01eglf.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/small/cc58c06cgy1fbvwwoiw4tj20b7088q3a.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvwwpmikuj20b208dt8x.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvwwqae6xj20iq0aqt9h.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvwwqzhzpj20jy096jrw.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvwwrgqs9j20es09emxn.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/small/cc58c06cgy1fbvwwsxg5oj20dj09tjrx.jpg">
-<meta property="og:updated_time" content="2017-01-19T06:47:32.355Z">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbvwwqae6xj20iq0aqt9h.jpg">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbvwwqzhzpj20jy096jrw.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fbvwwrgqs9j20es09emxn.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fbvwwsxg5oj20dj09tjrx.jpg">
+<meta property="og:updated_time" content="2017-01-20T07:48:30.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解javascript1-6">
 <meta name="twitter:description" content="编写高质量javascript1.编码规范缩进 —— tab制表符进行缩进
@@ -382,14 +382,14 @@ J-开头的命名用于js中业务逻辑编写
 <p>Calculator.prototype = function () { } ();</p>
 <p><img src="http://wx2.sinaimg.cn/small/cc58c06cgy1fbvwwpmikuj20b208dt8x.jpg" alt=""></p>
 <h3 id="3-原型继承"><a href="#3-原型继承" class="headerlink" title="3.原型继承"></a>3.原型继承</h3><p>在下面代码中，可以看到calTest是cal() new出来的对象，而cal的原型指向的是basecal()，在basecal对象上定义了decimal，在其原型对象上定义了add()和dec()方法，所以当需要定义所有对象都可以共享的方法时候，需要将其方法定义到原型对象上，然后才能通过原型继承访问改方法或者属性。</p>
-<p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvwwqae6xj20iq0aqt9h.jpg" alt=""></p>
+<p><img src="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbvwwqae6xj20iq0aqt9h.jpg" alt=""></p>
 <h3 id="4-属性查找"><a href="#4-属性查找" class="headerlink" title="4.属性查找"></a>4.属性查找</h3><p> 当查找一个对象的属性时，JavaScript 会向上遍历原型链，直到找到给定名称的属性为止，到查找到达原型链的顶部 - 也就是 Object.prototype - 但是仍然没有找到指定的属性，就会返回 undefined。</p>
-<p><img src="http://wx4.sinaimg.cn/small/cc58c06cgy1fbvwwqzhzpj20jy096jrw.jpg" alt=""></p>
+<p><img src="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbvwwqzhzpj20jy096jrw.jpg" alt=""></p>
 <p>在这里f会在查找原型链的过程中首先找到了foo()上的方法add，因此此处的返回结果为3，而并不是原型链上的add()方法结果13。</p>
 <h3 id="5-hasOwnProperty函数"><a href="#5-hasOwnProperty函数" class="headerlink" title="5.hasOwnProperty函数"></a>5.<strong>hasOwnProperty函数</strong></h3><p>hasOwnProperty是Object.prototype的一个方法能判断一个对象是否包含自定义属性而不是原型链上的属性。</p>
-<p><img src="http://wx3.sinaimg.cn/small/cc58c06cgy1fbvwwrgqs9j20es09emxn.jpg" alt=""></p>
+<p><img src="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fbvwwrgqs9j20es09emxn.jpg" alt=""></p>
 <p>但是hasOwnProperty 并没有列入关键字或者保留字里面，所有如果你定义了一个名字为hasOwnProperty 的属性就会出问题。比如向下面这样：</p>
-<p><img src="http://wx1.sinaimg.cn/small/cc58c06cgy1fbvwwsxg5oj20dj09tjrx.jpg" alt=""></p>
+<p><img src="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fbvwwsxg5oj20dj09tjrx.jpg" alt=""></p>
 <p>因此需要注意属性或者方法名称命名。</p>
 
     
