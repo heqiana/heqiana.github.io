@@ -34,7 +34,8 @@
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbx1ll6zjtj20bh07imxb.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbzdagx0ulj20be03wq2w.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzedzpc6yj20bv038glk.jpg">
-<meta property="og:updated_time" content="2017-01-22T06:38:56.514Z">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzeq9er0pj20by035q2u.jpg">
+<meta property="og:updated_time" content="2017-01-22T07:02:25.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解javascript11-15">
 <meta name="twitter:description" content="变量对象1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
@@ -283,9 +284,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var show = function () &#123;</div><div class="line"> //doSomething</div><div class="line">&#125;;</div><div class="line">// 圆括号（分组操作符）内只能是表达式</div><div class="line">(function show() &#123;&#125;);</div><div class="line">// 在数组初始化器内只能是表达式</div><div class="line">[function show() &#123;&#125;]</div></pre></td></tr></table></figure>
 <p>访问改函数需要show()方式进行访问。表达式如果要立即调用的话需要用()的方式包裹表达式，并且调用时需要在后面再加上()进行立即调用。</p>
 <p><img src="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzedzpc6yj20bv038glk.jpg" alt=""></p>
+<p>如果函数并没有采用()方式进行包裹，只采用()进行调用，那么就不能进行函数调用。</p>
 </li>
 </ul>
-
+<p><img src="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzeq9er0pj20by035q2u.jpg" alt=""></p>
+<p>​    其实这里的不一定非的需要()进行调用，只要是任意的操作符在函数之前就行。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">!function () &#123;</div><div class="line">  alert(&apos;ECMAScript&apos;);</div><div class="line">&#125;();</div><div class="line"></div><div class="line">+function () &#123;</div><div class="line">  alert(&apos;ECMAScript&apos;);</div><div class="line">&#125;();</div><div class="line"></div><div class="line">~function () &#123;</div><div class="line">  alert(&apos;ECMAScript&apos;);</div><div class="line">&#125;();</div></pre></td></tr></table></figure>
     
   </div>
 </article>
