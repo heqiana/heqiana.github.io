@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>深入理解javascript11-15 | 博客</title>
+  <title>深入理解javascript16-20 | 博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,38 +15,36 @@
     <meta name="keywords" content="前端,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
   
 
-  <meta name="description" content="变量对象1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
+  <meta name="description" content="闭包1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
 
 上面代码的对应的变量对象是：
-12345678VO(globalContext) = &amp;#123;    //全局变量对象  a: 10,  test: &amp;lt;reference to function&amp;gt;&amp;#125;;VO(test functionContext">
+12345678VO(globalContext) = &amp;#123;    //全局变量对象  a: 10,  test: &amp;lt;reference to function&amp;gt;&amp;#125;;VO(test functionContext)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解javascript11-15">
-<meta property="og:url" content="http://www.dhxhq.site/2017/01/19/深入了解javascript11-15/index.html">
+<meta property="og:title" content="深入理解javascript16-20">
+<meta property="og:url" content="http://www.dhxhq.site/2017/01/23/深入了解javascript16-20/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="变量对象1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
+<meta property="og:description" content="闭包1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
 
 上面代码的对应的变量对象是：
-12345678VO(globalContext) = &amp;#123;    //全局变量对象  a: 10,  test: &amp;lt;reference to function&amp;gt;&amp;#125;;VO(test functionContext">
+12345678VO(globalContext) = &amp;#123;    //全局变量对象  a: 10,  test: &amp;lt;reference to function&amp;gt;&amp;#125;;VO(test functionContext)">
 <meta property="og:image" content="http://wx1.sinaimg.cn/small/cc58c06cgy1fbw1awna3nj208h05kweh.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbwvwvmjrxj20fy07xq3f.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbwx7n60hij20a909674k.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbwxgdiszzj20e8067mxa.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/cc58c06cgy1fbx1ll6zjtj20bh07imxb.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fc0dbzp4b4j20ig05kjrj.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fc0dr78jb5j20lu080glz.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbzdagx0ulj20be03wq2w.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzedzpc6yj20bv038glk.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzeq9er0pj20by035q2u.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzj85fi78j209703w748.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbzjplpzqij20a707sglr.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fc0cj1bj4rj20ct05mq34.jpg">
-<meta property="og:updated_time" content="2017-01-23T03:05:54.814Z">
+<meta property="og:updated_time" content="2017-01-23T02:38:43.775Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解javascript11-15">
-<meta name="twitter:description" content="变量对象1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
+<meta name="twitter:title" content="深入理解javascript16-20">
+<meta name="twitter:description" content="闭包1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
 
 上面代码的对应的变量对象是：
-12345678VO(globalContext) = &amp;#123;    //全局变量对象  a: 10,  test: &amp;lt;reference to function&amp;gt;&amp;#125;;VO(test functionContext">
+12345678VO(globalContext) = &amp;#123;    //全局变量对象  a: 10,  test: &amp;lt;reference to function&amp;gt;&amp;#125;;VO(test functionContext)">
 <meta name="twitter:image" content="http://wx1.sinaimg.cn/small/cc58c06cgy1fbw1awna3nj208h05kweh.jpg">
 
   
@@ -189,20 +187,20 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">Posts List</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量对象"><span class="toc-text">变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-数据声明"><span class="toc-text">1.数据声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-不同执行上下文中的变量对象"><span class="toc-text">2.不同执行上下文中的变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数上下文中的变量对象"><span class="toc-text">函数上下文中的变量对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-关于变量"><span class="toc-text">3.关于变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-parent-属性"><span class="toc-text">4. _parent _属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#This-Yes-this"><span class="toc-text">This? Yes,this!</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-全局代码中的this"><span class="toc-text">1.全局代码中的this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-函数代码中的this"><span class="toc-text">2.函数代码中的this</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#作用域链"><span class="toc-text">作用域链</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-函数类型"><span class="toc-text">1.函数类型</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#闭包"><span class="toc-text">闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-数据声明"><span class="toc-text">1.数据声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-不同执行上下文中的变量对象"><span class="toc-text">2.不同执行上下文中的变量对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数上下文中的变量对象"><span class="toc-text">函数上下文中的变量对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-关于变量"><span class="toc-text">3.关于变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-parent-属性"><span class="toc-text">4. _parent _属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#This-Yes-this"><span class="toc-text">This? Yes,this!</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-全局代码中的this"><span class="toc-text">1.全局代码中的this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-函数代码中的this"><span class="toc-text">2.函数代码中的this</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-函数类型"><span class="toc-text">1.函数类型</span></a></li></ol></li></ol></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-深入了解javascript11-15" class="article article-type-post" itemprop="blogPost">
+   <article id="post-深入了解javascript16-20" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">深入理解javascript11-15</h1>
+    <h1 class="post-title">深入理解javascript16-20</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2017.01.19</span>
+        <span>2017.01.23</span>
       </span>
 
       
@@ -218,7 +216,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://www.forsigner.com/2017/01/19/深入了解javascript11-15/#disqus_thread"></a>
+          <a href="http://www.forsigner.com/2017/01/23/深入了解javascript16-20/#disqus_thread"></a>
         </span>
       
 
@@ -237,7 +235,7 @@
 
   <div class="article-content">
     
-      <h1 id="变量对象"><a href="#变量对象" class="headerlink" title="变量对象"></a><strong>变量对象</strong></h1><h3 id="1-数据声明"><a href="#1-数据声明" class="headerlink" title="1.数据声明"></a>1.数据声明</h3><p>如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。</p>
+      <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a><strong>闭包</strong></h1><h3 id="1-数据声明"><a href="#1-数据声明" class="headerlink" title="1.数据声明"></a>1.数据声明</h3><p>如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。</p>
 <p><img src="http://wx1.sinaimg.cn/small/cc58c06cgy1fbw1awna3nj208h05kweh.jpg" alt=""></p>
 <p>上面代码的对应的变量对象是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">VO(globalContext) = &#123;    //全局变量对象</div><div class="line">  a: 10,</div><div class="line">  test: &lt;reference to function&gt;</div><div class="line">&#125;;</div><div class="line">VO(test functionContext) = &#123;//test函数上下文变量对象</div><div class="line">  x: 30,</div><div class="line">  b: 20</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
@@ -276,19 +274,6 @@
 <p>影响this的因素：</p>
 <p>​    1.this取决于调用函数的方式</p>
 <p>​    2.如果当前函数为全局函数，则当前this指向全局。如果是以字面量形式定义的对象里面的函数，那么函数中的this则为当前对象。</p>
-<h1 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h1><p>​    当代码在一个环境中执行时，会创建变量对象的的一个作用域链（scope chain）。作用域链的用途，是保证对执行环境有权访问的所有变量和函数的有序访问。作用域链的前端，始终都是当前执行的代码所在环境的变量对象。如果这个环境是一个函数，则将其活动对象作为变量对象。</p>
-<ul>
-<li>函数加载阶段：add函数被创建，浏览器将add可访问的作用域的对象放入add的[[scope]]属性中，供函数执行时候用，如下图所示：</li>
-</ul>
-<p><img src="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fc0dbzp4b4j20ig05kjrj.jpg" alt=""></p>
-<ul>
-<li>函数执行阶段：</li>
-</ul>
-<p>​     首先浏览器会创建一个运行期上下文（类似编译原理所说的运行栈），用于定义函数执行时的环境，当函数执行完毕就会删除。</p>
-<p>​     其次浏览器将add的scope属性复制到上下文的作用域链scope chain中。</p>
-<p>​     最后浏览器根据add创建一个活动对象，该对象类似map键值对，包含了add函数的局部变量，并将活动对象放入作用链数组的最顶层。</p>
-<p><img src="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fc0dr78jb5j20lu080glz.jpg" alt=""></p>
-<p>​    因此，访问局部变量比访问全局变量速度快，因为局部变量的作用域在最顶端。</p>
 <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h3 id="1-函数类型"><a href="#1-函数类型" class="headerlink" title="1.函数类型"></a>1.函数类型</h3><p>在ECMAScript 中有三种函数类型：函数声明，函数表达式和函数构造器创建的函数。</p>
 <ul>
 <li><p>函数声明</p>
@@ -366,10 +351,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2017/01/19/深入了解javascript6-10/">
+    <a class="show pull-left" href="/2017/01/19/深入了解javascript11-15/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2017/01/23/深入了解javascript16-20/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -494,7 +479,7 @@
   <script>
     var disqus_shortname = 'forsigner';
     
-    var disqus_url = 'http://www.dhxhq.site/2017/01/19/深入了解javascript11-15/';
+    var disqus_url = 'http://www.dhxhq.site/2017/01/23/深入了解javascript16-20/';
     
     (function(){
       var dsq = document.createElement('script');
