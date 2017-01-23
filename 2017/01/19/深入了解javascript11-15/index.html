@@ -35,7 +35,10 @@
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbzdagx0ulj20be03wq2w.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzedzpc6yj20bv038glk.jpg">
 <meta property="og:image" content="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzeq9er0pj20by035q2u.jpg">
-<meta property="og:updated_time" content="2017-01-22T07:02:25.822Z">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzj85fi78j209703w748.jpg">
+<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbzjplpzqij20a707sglr.jpg">
+<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fc0cj1bj4rj20ct05mq34.jpg">
+<meta property="og:updated_time" content="2017-01-23T02:24:10.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解javascript11-15">
 <meta name="twitter:description" content="变量对象1.数据声明如果变量与执行上下文相关，那变量自己应该知道它的数据存储在哪里，并且知道如何访问。这种机制称为变量对象。
@@ -290,6 +293,35 @@
 <p><img src="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzeq9er0pj20by035q2u.jpg" alt=""></p>
 <p>​    其实这里的不一定非的需要()进行调用，只要是任意的操作符在函数之前就行。比如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">!function () &#123;</div><div class="line">  alert(&apos;ECMAScript&apos;);</div><div class="line">&#125;();</div><div class="line"></div><div class="line">+function () &#123;</div><div class="line">  alert(&apos;ECMAScript&apos;);</div><div class="line">&#125;();</div><div class="line"></div><div class="line">~function () &#123;</div><div class="line">  alert(&apos;ECMAScript&apos;);</div><div class="line">&#125;();</div></pre></td></tr></table></figure>
+<ul>
+<li><p>命名函数表达式的特性</p>
+<p>命名函数表达(NFE)在递归中可以通过自身调用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(function show(bar) &#123;</div><div class="line">  if (bar) &#123;</div><div class="line">    return;</div><div class="line">  &#125;</div><div class="line">  show(true);//可调用 </div><div class="line">&#125;)();</div><div class="line">// 在外部，是不可用的 </div><div class="line">show(); //  未定义</div></pre></td></tr></table></figure>
+<p>在函数外部show()是不可用的（因为它不在父作用域链中），但是，特定对象已经存储在函数的[[scope]]中，在那里是可用的。</p>
+</li>
+<li><p><strong>NFE 与SpiderMonkey</strong></p>
+<p>NFE：命名函数表达式。</p>
+<p>SpiderMonkey：JavaScript脚本引擎。</p>
+<p>按道理来说，立即执行匿名函数式不能访问外部对象x。但是，SpiderMonkey 中全局对象继承了Object.prototype中的属性，相应地，”x”也能被解析。</p>
+<p><img src="http://wx2.sinaimg.cn/mw690/cc58c06cgy1fbzj85fi78j209703w748.jpg" alt=""></p>
+<p>​</p>
+</li>
+</ul>
+<p>也会出现以下情况，在foo函数中就找到了x的值，也就不会继续往上寻找到达object.prototype.x的值，因此第二次打印出来的值是20而不是10 。</p>
+<p><img src="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fbzjplpzqij20a707sglr.jpg" alt=""></p>
+<ul>
+<li><p><strong>通过函数构造器创建的函数</strong></p>
+<p>当前IE浏览器(JScript 5.8 — IE8)中内置的JScript 执行有很多与函数表达式（NFE）相关的bug。</p>
+<p><img src="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fc0cj1bj4rj20ct05mq34.jpg" alt=""></p>
+<p>函数bar的[[Scope]]属性不包含show上下文的Ao——变量”y”不能访问，变量”x”从全局对象中取得。</p>
+</li>
+<li><p>创建函数的算法</p>
+<p>下面的伪码描述了函数创建的算法（没理解明白）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">F = new NativeObject();</div><div class="line">// 属性[[Class]]是&quot;Function&quot;</div><div class="line">F.[[Class]] = &quot;Function&quot;</div><div class="line">// 函数对象的原型是Function的原型</div><div class="line">F.[[Prototype]] = Function.prototype</div><div class="line">// 医用到函数自身</div><div class="line">// 调用表达式F的时候激活[[Call]]</div><div class="line">// 并且创建新的执行上下文</div><div class="line">F.[[Call]] = &lt;reference to function&gt;</div><div class="line">// 在对象的普通构造器里编译</div><div class="line">// [[Construct]] 通过new关键字激活</div><div class="line">// 并且给新对象分配内存</div><div class="line">// 然后调用F.[[Call]]初始化作为this传递的新创建的对象</div><div class="line">F.[[Construct]] = internalConstructor</div><div class="line">// 当前执行上下文的作用域链</div><div class="line">// 例如，创建F的上下文</div><div class="line">F.[[Scope]] = activeContext.Scope</div><div class="line">// 如果函数通过new Function(...)来创建，</div><div class="line">// 那么</div><div class="line">F.[[Scope]] = globalContext.Scope</div><div class="line">// 传入参数的个数</div><div class="line">F.length = countParameters</div><div class="line">// F对象创建的原型</div><div class="line">__objectPrototype = new Object();</div><div class="line">__objectPrototype.constructor = F // &#123;DontEnum&#125;, 在循环里不可枚举x</div><div class="line">F.prototype = __objectPrototype</div><div class="line">return F</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+
     
   </div>
 </article>
