@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>深入理解javascript16-20 | 博客</title>
+  <title>常用命令 | 博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,23 +15,19 @@
     <meta name="keywords" content="前端,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
   
 
-  <meta name="description" content="闭包1.什么叫闭包​    闭包按照我之前的理解就是函数里面嵌套一个函数，然后嵌套的函数可以访问外面的局部变量，就像下面这样：
-12345678function foo(x) &amp;#123;    var tmp = 3;    function bar(y) &amp;#123;        alert(x + y + (++tmp));    &amp;#125;    bar(10);&amp;#125;foo(2">
+  <meta name="description" content="git 常用命令
+123456789101112git status  ————查看修改的文件有哪些git checkout -- &amp;lt;file&amp;gt;...  ----忽略工作区的修改git clone  拷贝项目到本地，默认是master分支git checkout -b xxx   创建并且切换到分支git status  查看项目状态git add  添加改动git commit -m">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解javascript16-20">
-<meta property="og:url" content="http://www.dhxhq.site/2017/01/23/深入了解javascript16-20/index.html">
+<meta property="og:title" content="常用命令">
+<meta property="og:url" content="http://www.dhxhq.site/2017/02/04/git常用命令/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="闭包1.什么叫闭包​    闭包按照我之前的理解就是函数里面嵌套一个函数，然后嵌套的函数可以访问外面的局部变量，就像下面这样：
-12345678function foo(x) &amp;#123;    var tmp = 3;    function bar(y) &amp;#123;        alert(x + y + (++tmp));    &amp;#125;    bar(10);&amp;#125;foo(2">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fc0fi8lmvoj20bh05sglq.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fc0ios6ksvj2099080jrg.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fc0jc309j3j20b509bdg3.jpg">
-<meta property="og:updated_time" content="2017-01-24T01:18:42.717Z">
+<meta property="og:description" content="git 常用命令
+123456789101112git status  ————查看修改的文件有哪些git checkout -- &amp;lt;file&amp;gt;...  ----忽略工作区的修改git clone  拷贝项目到本地，默认是master分支git checkout -b xxx   创建并且切换到分支git status  查看项目状态git add  添加改动git commit -m">
+<meta property="og:updated_time" content="2017-02-04T02:08:17.938Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解javascript16-20">
-<meta name="twitter:description" content="闭包1.什么叫闭包​    闭包按照我之前的理解就是函数里面嵌套一个函数，然后嵌套的函数可以访问外面的局部变量，就像下面这样：
-12345678function foo(x) &amp;#123;    var tmp = 3;    function bar(y) &amp;#123;        alert(x + y + (++tmp));    &amp;#125;    bar(10);&amp;#125;foo(2">
-<meta name="twitter:image" content="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fc0fi8lmvoj20bh05sglq.jpg">
+<meta name="twitter:title" content="常用命令">
+<meta name="twitter:description" content="git 常用命令
+123456789101112git status  ————查看修改的文件有哪些git checkout -- &amp;lt;file&amp;gt;...  ----忽略工作区的修改git clone  拷贝项目到本地，默认是master分支git checkout -b xxx   创建并且切换到分支git status  查看项目状态git add  添加改动git commit -m">
 
   
 
@@ -173,20 +169,20 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#闭包"><span class="toc-text">闭包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么叫闭包"><span class="toc-text">1.什么叫闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Funarg问题"><span class="toc-text">2.Funarg问题</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-常用命令"><span class="toc-text">git 常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rake-zbj常用命令"><span class="toc-text">rake-zbj常用命令</span></a></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-深入了解javascript16-20" class="article article-type-post" itemprop="blogPost">
+   <article id="post-git常用命令" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">深入理解javascript16-20</h1>
+    <h1 class="post-title">常用命令</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2017.01.23</span>
+        <span>2017.02.04</span>
       </span>
 
       
@@ -202,7 +198,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://www.forsigner.com/2017/01/23/深入了解javascript16-20/#disqus_thread"></a>
+          <a href="http://www.forsigner.com/2017/02/04/git常用命令/#disqus_thread"></a>
         </span>
       
 
@@ -221,32 +217,11 @@
 
   <div class="article-content">
     
-      <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a><strong>闭包</strong></h1><h3 id="1-什么叫闭包"><a href="#1-什么叫闭包" class="headerlink" title="1.什么叫闭包"></a>1.什么叫闭包</h3><p>​    闭包按照我之前的理解就是函数里面嵌套一个函数，然后嵌套的函数可以访问外面的局部变量，就像下面这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function foo(x) &#123;</div><div class="line">    var tmp = 3;</div><div class="line">    function bar(y) &#123;</div><div class="line">        alert(x + y + (++tmp));</div><div class="line">    &#125;</div><div class="line">    bar(10);</div><div class="line">&#125;</div><div class="line">foo(2)//16</div></pre></td></tr></table></figure>
-<p>上面的函数不管执行多少次，都会alert 16，因为bar能访问foo的参数x，也能访问foo的变量tmp。</p>
-<p>但是实际上上面这种还不算是闭包。当直接return的是一个内部function时候，才是一个闭包，比如说：</p>
-<p><img src="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fc0fi8lmvoj20bh05sglq.jpg" alt=""></p>
-<p>最终也会打印输出 16，因为虽然result不直接处于show的内部作用域，但result还是能访问x和tmp。</p>
-<p>还有一个非常经典的例子：</p>
-<p><img src="http://wx1.sinaimg.cn/mw690/cc58c06cgy1fc0ios6ksvj2099080jrg.jpg" alt=""></p>
-<p>期待的输出值为0,1,2，但是实际输出全部是3。接下来分析一下原因：</p>
-<blockquote>
-<p>在ECMAScript中，同一个父上下文中创建的闭包是共用一个[[Scope]]属性的。也就是说，某个闭包对其中[[Scope]]的变量做修改会影响到其他闭包对其变量的读取，同一个上下文中创建的闭包是共用一个[[Scope]]属性的。</p>
-</blockquote>
-<p>以上问题的解决办法：</p>
-<p>​    声明一个匿名函数,若传进来的是基本类型则为值传递,故不会对实参产生影响,   该函数对象有一个本地私有变量x形参 ,该函数的 function scope 的 closure 对象属性有两个引用,一个是 data,一个是 k ，尽管引用 k 的值随外部改变 ,但本地私有变量(形参) x不会受影响,其值在一开始被调用的时候就决定了。</p>
-<p><img src="http://wx4.sinaimg.cn/mw690/cc58c06cgy1fc0jc309j3j20b509bdg3.jpg" alt=""></p>
-<p>还有其他解决办法，这里就不一一进行列举。</p>
-<h3 id="2-Funarg问题"><a href="#2-Funarg问题" class="headerlink" title="2.Funarg问题"></a>2.<strong>Funarg问题</strong></h3><p>函数的局部变量都是保存在栈上的，每当函数激活的时候，这些变量和函数参数都会压入到该堆栈上。当函数返回的时候，这些参数又会从栈中移除。</p>
-<p>总结：</p>
-<ol>
-<li>从理论角度：<strong>所有的函数都是闭包</strong>。因为它们都在创建的时候就将上层上下文的数据保存起来了。哪怕是简单的全局变量也是如此，因为函数中访问全局变量就相当于是在访问自由变量，这个时候使用最外层的作用域。</li>
-<li>从实践角度：以下函数才算是闭包：<ol>
-<li>即使创建它的上下文已经销毁，它仍然存在（比如，内部函数从父函数中返回）</li>
-<li>在代码中引用了自由变量。</li>
-</ol>
-</li>
-</ol>
+      <h1 id="git-常用命令"><a href="#git-常用命令" class="headerlink" title="git 常用命令"></a><strong>git 常用命令</strong></h1><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">git status  ————查看修改的文件有哪些</div><div class="line">git checkout -- &lt;file&gt;...  ----忽略工作区的修改</div><div class="line">git clone  拷贝项目到本地，默认是master分支</div><div class="line">git checkout -b xxx   创建并且切换到分支</div><div class="line">git status  查看项目状态</div><div class="line">git add  添加改动</div><div class="line">git commit -m &apos;xxx&apos;    提交写上备注</div><div class="line">git push origin xxx分支  推送项目</div><div class="line">git pull origin XXX分支 更新代码</div><div class="line">git checkout -- file可以丢弃工作区的修改</div><div class="line">git pull origin orderloan_2 更新最新代码（记住）</div><div class="line">git merge XX(当前分支)</div></pre></td></tr></table></figure>
+<h1 id="rake-zbj常用命令"><a href="#rake-zbj常用命令" class="headerlink" title="rake-zbj常用命令"></a>rake-zbj常用命令</h1></li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rk  server  start  开启服务器</div><div class="line">rk  release  -cw  一直发布，不需要每次都发布</div><div class="line">rk  release  -Dd  remote_he  -cw 边写边推送代码</div><div class="line">rk  data   从rap系统获取mock数据</div></pre></td></tr></table></figure></li>
+</ul>
 
     
   </div>
@@ -277,10 +252,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2017/01/19/深入了解javascript11-15/">
+    <a class="show pull-left" href="/2017/02/04/常用命令/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2017/01/23/阶段性总结/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -405,7 +380,7 @@
   <script>
     var disqus_shortname = 'forsigner';
     
-    var disqus_url = 'http://www.dhxhq.site/2017/01/23/深入了解javascript16-20/';
+    var disqus_url = 'http://www.dhxhq.site/2017/02/04/git常用命令/';
     
     (function(){
       var dsq = document.createElement('script');
