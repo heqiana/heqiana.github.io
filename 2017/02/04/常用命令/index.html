@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="博客">
 <meta property="og:description" content="git 常用命令
 123456789101112git status  ————查看修改的文件有哪些git checkout -- &amp;lt;file&amp;gt;...  ----忽略工作区的修改git clone  拷贝项目到本地，默认是master分支git checkout -b xxx   创建并且切换到分支git status  查看项目状态git add  添加改动git commit -m">
-<meta property="og:updated_time" content="2017-02-04T02:03:14.644Z">
+<meta property="og:updated_time" content="2017-02-04T02:56:35.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用命令">
 <meta name="twitter:description" content="git 常用命令
@@ -169,7 +169,7 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-常用命令"><span class="toc-text">git 常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rake-zbj常用命令"><span class="toc-text">rake-zbj常用命令</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-常用命令"><span class="toc-text">git 常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rake-zbj常用命令"><span class="toc-text">rake-zbj常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git项目部署"><span class="toc-text">git项目部署</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rake-zbj-开发流程"><span class="toc-text">rake-zbj 开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#开发新项目"><span class="toc-text">开发新项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RAP-项目建立"><span class="toc-text">RAP 项目建立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RAP-使用说明"><span class="toc-text">RAP 使用说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和后端联调"><span class="toc-text">和后端联调</span></a></li></ol></li></ol></li></ol>
   </div>
 
 
@@ -220,8 +220,60 @@
       <h1 id="git-常用命令"><a href="#git-常用命令" class="headerlink" title="git 常用命令"></a><strong>git 常用命令</strong></h1><ul>
 <li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">git status  ————查看修改的文件有哪些</div><div class="line">git checkout -- &lt;file&gt;...  ----忽略工作区的修改</div><div class="line">git clone  拷贝项目到本地，默认是master分支</div><div class="line">git checkout -b xxx   创建并且切换到分支</div><div class="line">git status  查看项目状态</div><div class="line">git add  添加改动</div><div class="line">git commit -m &apos;xxx&apos;    提交写上备注</div><div class="line">git push origin xxx分支  推送项目</div><div class="line">git pull origin XXX分支 更新代码</div><div class="line">git checkout -- file可以丢弃工作区的修改</div><div class="line">git pull origin orderloan_2 更新最新代码（记住）</div><div class="line">git merge XX(当前分支)</div></pre></td></tr></table></figure>
 <h1 id="rake-zbj常用命令"><a href="#rake-zbj常用命令" class="headerlink" title="rake-zbj常用命令"></a>rake-zbj常用命令</h1></li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rk  server  start  开启服务器</div><div class="line">rk  release  -cw  一直发布，不需要每次都发布</div><div class="line">rk  release  -Dd  remote_he  -cw 边写边推送代码</div><div class="line">rk  data   从rap系统获取mock数据</div></pre></td></tr></table></figure></li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rk  server  start  开启服务器</div><div class="line">rk  release  -cw  一直发布，不需要每次都发布</div><div class="line">rk  release  -Dd  remote_he  -cw 边写边推送代码</div><div class="line">rk  data   从rap系统获取mock数据</div></pre></td></tr></table></figure>
+<p>rake-zbj 是基于 fis-plus，sea.js，rap 接口管理系统开发的一个前端集成开发环境。</p>
+<h1 id="git项目部署"><a href="#git项目部署" class="headerlink" title="git项目部署"></a>git项目部署</h1><p>1.从远程仓库克隆到本地</p>
+<p>2.在本地新建分支 XXX，并在分支 XXX 上进行开发，开发完成以后 push 到远程仓库</p>
+<h1 id="rake-zbj-开发流程"><a href="#rake-zbj-开发流程" class="headerlink" title="rake-zbj 开发流程"></a>rake-zbj 开发流程</h1><h3 id="开发新项目"><a href="#开发新项目" class="headerlink" title="开发新项目"></a>开发新项目</h3><p> git.zhubajie.la 上，登录 git.zhubajie.la 创建一个新的代码仓库，项目组选择 fe， 项目命名为 fis-{name}，假设我们的新项目名为 fis-jinrong，{name} 为项目代号，同时会作为我们的项目的命名空间，方便跨模块定为资源</p>
+<p>在 workspace 目录下运行 git clone git.zhubajie.la/fe/fis-jinron</p>
+<p>运行完成后，工作目录如下所示</p>
+<p>workspace</p>
+<p>  ├── fis-common<br>  ├── fis-jinrong         </p>
+</li>
 </ul>
+<p>​    新项目 checkout 出来后，运行 <code>rk init</code> 初始化我们的项目，项目ID即为我们的 {name}项目代号</p>
+<p>​    如果 rk init 没有反应，运行 rk -v 看看 rake-zbj 的版本，需要大于 0.2.20</p>
+<h3 id="RAP-项目建立"><a href="#RAP-项目建立" class="headerlink" title="RAP 项目建立"></a>RAP 项目建立</h3><p>​    前后端的接口文档，是存放在 rap 网站上的。接口是前后端沟通的桥梁，我们在完成需求分享和模块划分    后，就需要和后端一起确定相关功能接口。<br>​    接口定好后，可以将接口录入到 rap 系统中。接口数据录入后，即可通过 rk data 命令一键下载测试数据到本地，方便本地开发和调试。<br>​    每次 RAP 系统接口有更新后，都需要运行 rk data 获取最新的测试数据<br>​    使用rk data后会新生成测试数据test（里面的数据和page下的模板是同名依赖关系）和路由文件server.conf，注意先在fis-config.js里面确定好rapId与namespace，rapId与RAP上建立的项目id保持一致，不然拉不下来数据。</p>
+<h3 id="RAP-使用说明"><a href="#RAP-使用说明" class="headerlink" title="RAP 使用说明"></a>RAP 使用说明</h3><p>​    在 rap 建立好接口后，或者更新接口后，都需要运行 rk data 下载模拟数据<br>​    进入 fis-common 目录，运行 rk release -cw，发布 fis-common 模块代码。fis-common为公共组件，通常情况不会发生变化，一般情况不需要加上监听参数w，直接使rk release -c就可以了。<br>​    进入 fis-jinrong 目录，运行 rk release -cw，发布 fis-jinrong 模块代码<br>运行 rk server start，打开本地测试环境地址，输入 fis-jinrong 目录下的 server.conf 文件里相应的接口地址即可            看到效果<br>​    发布后的代码在哪里？运行 rk server open 即可看到本地的调试服务器目录<br>​    如果发生了调试运行的时候发现即使url变了，但渲染的内容依然是旧的，这就是缓存在作怪，可以rk server open，手动删除缓存；也可以直接使用rk server clean清空目录，然后重新发布一下。</p>
+<h3 id="和后端联调"><a href="#和后端联调" class="headerlink" title="和后端联调"></a>和后端联调</h3><p>​    本地开发完后，我们需要和后端进行联调，一般情况下是将代码发布到后端的测试机器上去。<br>后端要做的事情</p>
+<p>​    让后端将此接收代码的脚本部署到其测试机器上，首先用switchhost切换到后端机子ip。</p>
+<p>​    修改 fis-conf.js，添加 deploy 信息</p>
+<pre><code>rapId: 149, // 自己的rapId
+namespace: &quot;campus&quot;, // 自己的项目名称
+rapUrl: &apos;http://192.168.142.49:3000/?project_id=&apos;,
+roadmap : {
+    domain : &quot;http://a.dev.zbjdev.com&quot;
+},
+deploy: {
+        remote_rd: [
+            {
+                receiver : receiverUrl,
+                from : &apos;/static&apos;,
+                to : &apos;/{后端 web 目录}/rake-static&apos;, // 后端 web 目录，即值 SlightPHP 的上级目录，如果是 windows 系统，用正斜线，即 E:/path/to/webroot
+                exclude : /.*\.(?:svn|cvs|tar|rar|psd).*/
+            },
+            {
+                receiver : receiverUrl,
+                from : &apos;/config&apos;,
+                to : &apos;/{后端 web 目录}/rake-zbj&apos;,
+                exclude : /.*\.(?:svn|cvs|tar|rar|psd).*/
+            },
+            {
+                receiver : receiverUrl,
+                from : &apos;/template&apos;,
+                to : &apos;/{后端 web 目录}/rake-zbj&apos;,
+                exclude : /.*\.(?:svn|cvs|tar|rar|psd).*/
+            },
+            {
+                receiver : receiverUrl,
+                from : &apos;/plugin&apos;,
+                to : &apos;/{后端 web 目录}/rake-zbj&apos;,
+                exclude : /.*\.(?:svn|cvs|tar|rar|psd).*/
+            }
+        ]
+        ..可以添加多个后端机器
+}
+</code></pre><p>});<br>roadmap : {<br>    domain : “<a href="http://a.dev.zbjdev.com" target="_blank" rel="external">http://a.dev.zbjdev.com</a>“<br>},<br>运行 rk release -Dd remote_rd，如果有错误，可以多运行几次。代码发发布完后，即可访问后端机器看到运行情况</p>
 
     
   </div>
