@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="博客">
 <meta property="og:description" content="git 常用命令
 123456789101112git status  ————查看修改的文件有哪些git checkout -- &amp;lt;file&amp;gt;...  ----忽略工作区的修改git clone  拷贝项目到本地，默认是master分支git checkout -b xxx   创建并且切换到分支git status  查看项目状态git add  添加改动git commit -m">
-<meta property="og:updated_time" content="2017-02-04T02:56:35.201Z">
+<meta property="og:updated_time" content="2017-02-04T02:58:21.203Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用命令">
 <meta name="twitter:description" content="git 常用命令
@@ -224,7 +224,7 @@
 <p>rake-zbj 是基于 fis-plus，sea.js，rap 接口管理系统开发的一个前端集成开发环境。</p>
 <h1 id="git项目部署"><a href="#git项目部署" class="headerlink" title="git项目部署"></a>git项目部署</h1><p>1.从远程仓库克隆到本地</p>
 <p>2.在本地新建分支 XXX，并在分支 XXX 上进行开发，开发完成以后 push 到远程仓库</p>
-<h1 id="rake-zbj-开发流程"><a href="#rake-zbj-开发流程" class="headerlink" title="rake-zbj 开发流程"></a>rake-zbj 开发流程</h1><h3 id="开发新项目"><a href="#开发新项目" class="headerlink" title="开发新项目"></a>开发新项目</h3><p> git.zhubajie.la 上，登录 git.zhubajie.la 创建一个新的代码仓库，项目组选择 fe， 项目命名为 fis-{name}，假设我们的新项目名为 fis-jinrong，{name} 为项目代号，同时会作为我们的项目的命名空间，方便跨模块定为资源</p>
+<h1 id="rake-zbj-开发流程"><a href="#rake-zbj-开发流程" class="headerlink" title="rake-zbj 开发流程"></a>rake-zbj 开发流程</h1><h3 id="开发新项目"><a href="#开发新项目" class="headerlink" title="开发新项目"></a><strong>开发新项目</strong></h3><p>新项目在 git.zhubajie.la 上，登录 git.zhubajie.la 创建一个新的代码仓库，项目组选择 fe， 项目命名为 fis-{name}，假设我们的新项目名为 fis-jinrong，{name} 为项目代号，同时会作为我们的项目的命名空间，方便跨模块定为资源</p>
 <p>在 workspace 目录下运行 git clone git.zhubajie.la/fe/fis-jinron</p>
 <p>运行完成后，工作目录如下所示</p>
 <p>workspace</p>
@@ -233,9 +233,9 @@
 </ul>
 <p>​    新项目 checkout 出来后，运行 <code>rk init</code> 初始化我们的项目，项目ID即为我们的 {name}项目代号</p>
 <p>​    如果 rk init 没有反应，运行 rk -v 看看 rake-zbj 的版本，需要大于 0.2.20</p>
-<h3 id="RAP-项目建立"><a href="#RAP-项目建立" class="headerlink" title="RAP 项目建立"></a>RAP 项目建立</h3><p>​    前后端的接口文档，是存放在 rap 网站上的。接口是前后端沟通的桥梁，我们在完成需求分享和模块划分    后，就需要和后端一起确定相关功能接口。<br>​    接口定好后，可以将接口录入到 rap 系统中。接口数据录入后，即可通过 rk data 命令一键下载测试数据到本地，方便本地开发和调试。<br>​    每次 RAP 系统接口有更新后，都需要运行 rk data 获取最新的测试数据<br>​    使用rk data后会新生成测试数据test（里面的数据和page下的模板是同名依赖关系）和路由文件server.conf，注意先在fis-config.js里面确定好rapId与namespace，rapId与RAP上建立的项目id保持一致，不然拉不下来数据。</p>
-<h3 id="RAP-使用说明"><a href="#RAP-使用说明" class="headerlink" title="RAP 使用说明"></a>RAP 使用说明</h3><p>​    在 rap 建立好接口后，或者更新接口后，都需要运行 rk data 下载模拟数据<br>​    进入 fis-common 目录，运行 rk release -cw，发布 fis-common 模块代码。fis-common为公共组件，通常情况不会发生变化，一般情况不需要加上监听参数w，直接使rk release -c就可以了。<br>​    进入 fis-jinrong 目录，运行 rk release -cw，发布 fis-jinrong 模块代码<br>运行 rk server start，打开本地测试环境地址，输入 fis-jinrong 目录下的 server.conf 文件里相应的接口地址即可            看到效果<br>​    发布后的代码在哪里？运行 rk server open 即可看到本地的调试服务器目录<br>​    如果发生了调试运行的时候发现即使url变了，但渲染的内容依然是旧的，这就是缓存在作怪，可以rk server open，手动删除缓存；也可以直接使用rk server clean清空目录，然后重新发布一下。</p>
-<h3 id="和后端联调"><a href="#和后端联调" class="headerlink" title="和后端联调"></a>和后端联调</h3><p>​    本地开发完后，我们需要和后端进行联调，一般情况下是将代码发布到后端的测试机器上去。<br>后端要做的事情</p>
+<h3 id="RAP-项目建立"><a href="#RAP-项目建立" class="headerlink" title="RAP 项目建立"></a><strong>RAP 项目建立</strong></h3><p>​    前后端的接口文档，是存放在 rap 网站上的。接口是前后端沟通的桥梁，我们在完成需求分享和模块划分    后，就需要和后端一起确定相关功能接口。<br>​    接口定好后，可以将接口录入到 rap 系统中。接口数据录入后，即可通过 rk data 命令一键下载测试数据到本地，方便本地开发和调试。<br>​    每次 RAP 系统接口有更新后，都需要运行 rk data 获取最新的测试数据<br>​    使用rk data后会新生成测试数据test（里面的数据和page下的模板是同名依赖关系）和路由文件server.conf，注意先在fis-config.js里面确定好rapId与namespace，rapId与RAP上建立的项目id保持一致，不然拉不下来数据。</p>
+<h3 id="RAP-使用说明"><a href="#RAP-使用说明" class="headerlink" title="RAP 使用说明"></a><strong>RAP 使用说明</strong></h3><p>​    在 rap 建立好接口后，或者更新接口后，都需要运行 rk data 下载模拟数据<br>​    进入 fis-common 目录，运行 rk release -cw，发布 fis-common 模块代码。fis-common为公共组件，通常情况不会发生变化，一般情况不需要加上监听参数w，直接使rk release -c就可以了。<br>​    进入 fis-jinrong 目录，运行 rk release -cw，发布 fis-jinrong 模块代码<br>运行 rk server start，打开本地测试环境地址，输入 fis-jinrong 目录下的 server.conf 文件里相应的接口地址即可            看到效果<br>​    发布后的代码在哪里？运行 rk server open 即可看到本地的调试服务器目录<br>​    如果发生了调试运行的时候发现即使url变了，但渲染的内容依然是旧的，这就是缓存在作怪，可以rk server open，手动删除缓存；也可以直接使用rk server clean清空目录，然后重新发布一下。</p>
+<h3 id="和后端联调"><a href="#和后端联调" class="headerlink" title="和后端联调"></a><strong>和后端联调</strong></h3><p>​    本地开发完后，我们需要和后端进行联调，一般情况下是将代码发布到后端的测试机器上去。<br>后端要做的事情</p>
 <p>​    让后端将此接收代码的脚本部署到其测试机器上，首先用switchhost切换到后端机子ip。</p>
 <p>​    修改 fis-conf.js，添加 deploy 信息</p>
 <pre><code>rapId: 149, // 自己的rapId
